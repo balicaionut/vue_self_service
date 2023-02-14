@@ -1,4 +1,4 @@
-var products = [
+[
     {
         "photo": "img/big-mac.png",
         "name": "Big Mac",
@@ -62,5 +62,4 @@ var products = [
         "active": false,
         "quantity": 1
     }
-];
- 
+]
