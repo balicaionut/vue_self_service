@@ -7,10 +7,6 @@
 </template>
 
 <style>
-/* <!-- HTML !-->
-<button class="button-54" role="button">Button 54</button> */
-
-/* CSS */
 nav {
   position: absolute;
   padding: 10px;
