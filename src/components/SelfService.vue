@@ -158,10 +158,25 @@
 </template>
 
 <script>
+import productsJson from '../assets/prducts.json';
+
 export default {
   name: 'SelfService',
   components: {
 
+  },
+  data() {
+    return {
+      products: [],
+    };
+  },
+  computed: {
+    loadProducts() {
+      return productsJson;
+    },
+  },
+  mounted() {
+    this.products = this.loadProducts;
   },
 };
 </script>

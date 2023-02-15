@@ -1,63 +1,81 @@
 [
     {
+        "id": 1,
         "photo": "img/big-mac.png",
         "name": "Big Mac",
+        "category": "sandwich",
         "price": 5.99,
         "active": false,
         "quantity": 1
     },
     {
+        "id": 2,
         "photo": "img/mc-chicken.png",
         "name": "Mc Chicken",
+        "category": "sandwich",
         "price": 4.99,
         "active": false,
         "quantity": 1
     },
     {
+        "id": 3,
         "photo": "img/double-cb.png",
         "name": "Double Cheese Burger",
+        "category": "sandwich",
         "price": 2.99,
         "active": false,
         "quantity": 1
     },
     {
+        "id": 4,
         "photo": "img/fries.png",
         "name": "Fries",
+        "category": "extra",
         "price": 2.99,
         "active": false,
         "quantity": 1
     },
     {
+        "id": 5,
         "photo": "img/nuggets.png",
         "name": "Mc Nuggets",
+        "category": "extra",
         "price": 3.49,
         "active": false,
         "quantity": 1
     },
     {
+        "id": 6,
         "photo": "img/salad.png",
         "name": "Salad",
+        "category": "extra",
         "price": 2.79,
         "active": false,
         "quantity": 1
     },
     {
+        "id": 7,
         "photo": "img/cola.png",
         "name": "Coke",
+        "category": "drink",
         "price": 1.99,
         "active": false,
         "quantity": 1
     },
     {
+        "id": 8,
         "photo": "img/lipton.png",
         "name": "Ice Tea",
+        "category": "drink",
         "price": 1.99,
         "active": false,
         "quantity": 1
     },
     {
+        "id": 9,
         "photo": "img/water.png",
         "name": "Water",
+        "category": "drink",
         "price": 1.49,
         "active": false,
         "quantity": 1
