@@ -1,9 +1,24 @@
 <template>
-    <body>
-        <main>
-            <section class="items">
+  <body>
+    <main>
+      <section class="items">
         <h4>Pick your items</h4>
-        <div class="product selected">
+        <div class="product" v-for="product in products" :key="product">
+          <div class="photo">
+            <img :src="require('../assets/' + product.photo)" :alt="product.name" />
+          </div>
+          <div class="description">
+            <span class="name">{{ product.name }}</span>
+            <span class="price">{{ product.price }}</span>
+            <div class="quantity-area">
+              <button>-</button>
+              <span class="quantity">{{ product.quantity }}</span>
+              <button>+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="product selected">
             <div class="photo">
                 <img src="../assets/img/big-mac.png" alt="big-mac">
             </div>
@@ -128,33 +143,33 @@
                     <button>+</button>
                 </div>
             </div>
-        </div>
-    </section>
+        </div> -->
+      </section>
 
-    <section class="summary">
+      <section class="summary">
         <strong>Order Details</strong>
         <table>
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1x Big Mac</td>
-                    <td>5.99</td>
-                </tr>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1x Big Mac</td>
+              <td>5.99</td>
+            </tr>
 
-                <tr>
-                    <th>Total</th>
-                    <th>5.99</th>
-                </tr>
-            </tbody>
+            <tr>
+              <th>Total</th>
+              <th>5.99</th>
+            </tr>
+          </tbody>
         </table>
-    </section>
-        </main>
-    </body>
+      </section>
+    </main>
+  </body>
 </template>
 
 <script>
@@ -162,9 +177,7 @@ import productsJson from '../assets/prducts.json';
 
 export default {
   name: 'SelfService',
-  components: {
-
-  },
+  components: {},
   data() {
     return {
       products: [],
