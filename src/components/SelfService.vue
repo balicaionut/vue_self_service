@@ -28,7 +28,7 @@
         </div>
       </section>
 
-      <section class="summary">
+      <section class="summary" v-if="calculateTotal() > 0">
         <strong>Order Details</strong>
         <table>
           <thead>
