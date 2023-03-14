@@ -40,13 +40,13 @@
           <tbody>
             <tr v-for="product in products" :key="product">
               <template v-if="product.active">
-                <td>{{ product.quantity + 'x ' + product.name }}</td>
+                <td>{{ product.quantity + ' x ' + product.name }}</td>
                 <td>{{ (product.quantity * product.price).toFixed(2) }}</td>
               </template>
             </tr>
             <tr>
               <th>Total</th>
-              <th>5.99</th>
+              <th>{{ calculateTotal().toFixed(2) }}</th>
             </tr>
           </tbody>
         </table>
@@ -64,6 +64,7 @@ export default {
   data() {
     return {
       products: [],
+      total: 0,
     };
   },
   computed: {
@@ -73,6 +74,17 @@ export default {
   },
   mounted() {
     this.products = this.loadProducts;
+  },
+  methods: {
+    calculateTotal() {
+      let total = 0;
+      this.products.forEach((item) => {
+        if (item.active) {
+          total += item.price * item.quantity;
+        }
+      });
+      return total;
+    },
   },
 };
 </script>
