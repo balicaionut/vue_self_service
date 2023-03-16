@@ -50,6 +50,7 @@
             </tr>
           </tbody>
         </table>
+        <button class="orderButton" @click="placeOrder">Process Order</button>
       </section>
     </main>
   </body>
@@ -84,6 +85,11 @@ export default {
         }
       });
       return total;
+    },
+    placeOrder() {
+      let order = this.products;
+      order = order.filter((item) => item.active !== false);
+      console.log('order: ', order);
     },
   },
 };

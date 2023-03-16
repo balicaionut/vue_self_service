@@ -99,5 +99,8 @@ section.summary table tbody tr:last-of-type th {
     padding-top: 4px;
 }
 
-
+section.summary .orderButton {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
 
