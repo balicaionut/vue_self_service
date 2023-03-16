@@ -87,9 +87,26 @@ export default {
       return total;
     },
     placeOrder() {
-      let order = this.products;
-      order = order.filter((item) => item.active !== false);
-      console.log('order: ', order);
+      const order = {};
+      order.products = this.products;
+      let orderList = JSON.parse(localStorage.getItem('orderList'));
+      if (!orderList) {
+        orderList = [];
+      }
+      let orderNumber = 1;
+      if (orderList.length > 0) {
+        orderNumber = orderList[orderList.length - 1].number + 1;
+      }
+      order.number = orderNumber;
+      order.products = order.products.filter((item) => item.active !== false);
+      order.products.forEach((item) => {
+        order.prepTime = order.prepTime
+          ? order.prepTime + item.prepTime * item.quantity
+          : item.prepTime * item.quantity;
+      });
+      order.timeStamp = new Date().getTime();
+      orderList.push(order);
+      localStorage.setItem('orderList', JSON.stringify(orderList));
     },
   },
 };

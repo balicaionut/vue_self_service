@@ -1,6 +1,7 @@
 <template>
   <nav>
-    <router-link class="button-54" to="/">Home</router-link>
+    <router-link class="button-54" to="/">New Order</router-link>
+    <router-link class="button-54" to="/orderList">Order List</router-link>
     <router-link class="button-54" to="/about">About</router-link>
   </nav>
   <router-view />
@@ -10,7 +11,7 @@
 nav {
   position: absolute;
   padding: 10px;
-  left: calc(50% - 90px);
+  left: calc(50% - 170px);
 }
 .button-54 {
   font-family: 'Open Sans', sans-serif;
