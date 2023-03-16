@@ -99,10 +99,9 @@ export default {
       }
       order.number = orderNumber;
       order.products = order.products.filter((item) => item.active !== false);
-      order.products.forEach((item) => {
-        order.prepTime = order.prepTime
-          ? order.prepTime + item.prepTime * item.quantity
-          : item.prepTime * item.quantity;
+      order.prepTime = 0;
+      order.products.forEach((product) => {
+        if (product.prepTime > order.prepTime) order.prepTime = product.prepTime;
       });
       order.timeStamp = new Date().getTime();
       orderList.push(order);
